@@ -2,7 +2,7 @@
 
 import {
   createRouter,
-} from '@exponent/ex-navigation';
+} from '@expo/ex-navigation';
 
 import Feeds from './components/Feeds';
 import Articles from './components/Articles';
