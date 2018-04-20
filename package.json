@@ -10,7 +10,7 @@
     "@expo/ex-navigation": "^4.2.0",
     "react": "^16.0.0-alpha.12",
     "react-native": "^0.47.2",
-    "react-native-key-event": "^1.0.0",
+    "react-native-keyevent": "^0.1.1",
     "react-native-router-flux": "^3.38.0"
   },
   "devDependencies": {

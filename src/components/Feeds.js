@@ -30,7 +30,7 @@ export default class Feeds extends Component {
   state: TState = {
     url: 'http://',
     feeds: [
-      { url: 'http://www.visualisingdata.com/feed', name: 'Visualising Data' }, //updated
+      { url: 'http://www.visualisingdata.com/feed', name: 'Visualising Data' },
       { url: 'https://blog.callstack.io/feed', name: 'Callstack.io blog' },
       { url: 'http://feeds.bbci.co.uk/news/rss.xml', name: 'BBC - Top Stories' },
     ],

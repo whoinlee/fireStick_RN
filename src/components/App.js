@@ -1,11 +1,11 @@
 /* @flow */
 import React, { Component } from 'react';
 
-//-- original code
 import {
   NavigationProvider,
   StackNavigation,
 } from '@expo/ex-navigation';
+
 import Router from '../Router';
 
 

@@ -2,7 +2,8 @@ package com.tv;
 
 import com.facebook.react.ReactActivity;
 import android.view.KeyEvent; // <--- import
-import net.kangyufei.KeyEventModule; // <--- import
+import com.github.kevinejohn.keyevent.KeyEventModule; // <--- import
+
 
 public class MainActivity extends ReactActivity {
 
@@ -31,7 +32,8 @@ public class MainActivity extends ReactActivity {
         //        KeyEventModule.getInstance().onKeyDownEvent(keyCode);
         //
         // Using B.
-        KeyEventModule.getInstance().onKeyDownEvent(keyCode, event);
+        KeyEventModule.getInstance().onKeyDownEvent(keyCode, event);    //updated from .onKeyDownEvent(keyCode)
+        //KeyEventModule.getInstance().onKeyDownEvent(keyCode);         //original
 
         // There are 2 ways this can be done:
         //  1.  Override the default keyboard event behavior
@@ -44,5 +46,24 @@ public class MainActivity extends ReactActivity {
         // Using method #1 without blocking multiple
         super.onKeyDown(keyCode, event);
         return true;
-      }
+      }//onKeyDown
+
+    /*
+    @Override  // <--- Add this method if you want to react to keyUp
+      public boolean onKeyUp(int keyCode, KeyEvent event) {
+        KeyEventModule.getInstance().onKeyUpEvent(keyCode, event);
+
+        // There are 2 ways this can be done:
+        //  1.  Override the default keyboard event behavior
+        //    super.onKeyUp(keyCode, event);
+        //    return true;
+
+        //  2.  Keep default keyboard event behavior
+        //    return super.onKeyUp(keyCode, event);
+
+        // Using method #1
+        super.onKeyUp(keyCode, event);
+        return true;
+      }//onKeyUp
+    */
 }

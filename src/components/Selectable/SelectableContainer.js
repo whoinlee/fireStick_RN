@@ -40,6 +40,7 @@ export default class SelectableContainer extends Component {
   props: TProps
 
   _listenerKeyDown: ?Function
+  // _listenerKeyUp: ?Function
 
   componentDidMount() {
     this._listenerKeyDown = keyListener.set(this._handleKeyDown);
