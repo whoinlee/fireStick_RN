@@ -1,9 +1,10 @@
 /* @flow */
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { View } from 'react-native';
 import keyListener from './keyListener';
 import keyCodes from './keyCodes';
+import PropTypes from 'prop-types';
 
 type TPosition = {
   x: number;
@@ -81,19 +82,32 @@ export default class SelectableContainer extends Component {
     }
   }
 
-  _handleKeyDown = (key: number) => {
+  // _handleKeyDown = (key: number) => {
+  _handleKeyDown = (key) => {
+    console.log("INFO SelectableContainer :: _handleKeyDown, key: " + key)
     switch (key) {
       case keyCodes.up:
+        console.log("INFO SelectableContainer :: _handleKeyDown, up")
         this._selectNewActive(x => x - 1);
         break;
       case keyCodes.down:
+        console.log("INFO SelectableContainer :: _handleKeyDown, down")
         this._selectNewActive(x => x + 1);
         break;
+      case keyCodes.left:
+        console.log("INFO SelectableContainer :: _handleKeyDown, left")
+        break;
+      case keyCodes.right:
+        console.log("INFO SelectableContainer :: _handleKeyDown, right")
+        break;
       case keyCodes.center:
+        console.log("INFO SelectableContainer :: _handleKeyDown, center")
         if (this.state.activeSelectable) {
           this.state.activeSelectable.onPress();
         }
         break;
+      default:
+        console.log("INFO SelectableContainer :: _handleKeyDown, default")
     }
 
     return true;

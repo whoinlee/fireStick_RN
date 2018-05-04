@@ -28,7 +28,7 @@ export default class Feeds extends Component {
   props: TProps
 
   state: TState = {
-    url: 'http://',
+    url: 'http://www',
     feeds: [
       { url: 'http://www.visualisingdata.com/feed', name: 'Visualising Data' },
       { url: 'https://blog.callstack.io/feed', name: 'Callstack.io blog' },

@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import { TextInput } from 'react-native';
-
 import selectable from './selectable';
 
 const Selectable = selectable(TextInput);

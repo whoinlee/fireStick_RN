@@ -1,5 +1,6 @@
 /* @flow */
 import React, { Component } from 'react';
+// import 'expo';
 
 import {
   NavigationProvider,
@@ -13,6 +14,7 @@ class App extends Component<void, void, void> {
   navigator: any;
 
   render() {
+    console.log("INFO App :: render")
     return (
       <NavigationProvider router={Router}>
         <StackNavigation initialRoute={Router.getRoute('feeds')} />
