@@ -132,6 +132,7 @@ export default class SelectableContainer extends Component {
     });
 
     this.setState({ selectables: this.state.selectables });
+    console.log("INFO SelectableContainer :: _rgisterSelectable, ever called ????????, this.state.selectables.length ? " + this.state.selectables.length)
   }
 
   render() {

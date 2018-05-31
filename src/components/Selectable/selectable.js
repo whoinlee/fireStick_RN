@@ -42,6 +42,7 @@ export default function selectable(WrappedComponent: any) {
       this.setState({ isFocused: true });
 
       if (onFocus) {
+        console.log("INFO selectable: onFocus");
         onFocus();
       }
     }
@@ -52,6 +53,7 @@ export default function selectable(WrappedComponent: any) {
       this.setState({ isFocused: false });
 
       if (onBlur) {
+        console.log("INFO selectable: onBlur");
         onBlur();
       }
     }
