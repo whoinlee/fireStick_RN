@@ -55,6 +55,38 @@ export default class SelectableContainer extends Component {
     this._listenerKeyDown = keyListener.set(this._handleKeyDown, this._listenerKeyDown);
   }
 
+  // _handleKeyDown = (key: number) => {
+  _handleKeyDown = (key) => {
+    //console.log("INFO SelectableContainer :: _handleKeyDown, key.keyCode " + key.keyCode)
+    //console.log("INFO SelectableContainer :: _handleKeyDown, typeof(key.keyCode) " + typeof(key.keyCode))
+    switch (key.keyCode) {
+      case keyCodes.up:
+        console.log("INFO SelectableContainer :: _handleKeyDown, up")
+        this._selectNewActive(x => x - 1);
+        break;
+      case keyCodes.down:
+        console.log("INFO SelectableContainer :: _handleKeyDown, down")
+        this._selectNewActive(x => x + 1);
+        break;
+      case keyCodes.left:
+        console.log("INFO SelectableContainer :: _handleKeyDown, left")
+        break;
+      case keyCodes.right:
+        console.log("INFO SelectableContainer :: _handleKeyDown, right")
+        break;
+      case keyCodes.center:
+        console.log("INFO SelectableContainer :: _handleKeyDown, center")
+        if (this.state.activeSelectable) {
+          this.state.activeSelectable.onPress();
+        }
+        break;
+      default:
+        console.log("INFO SelectableContainer :: _handleKeyDown, default - key.keyCode is :: " + key.keyCode)
+    }
+
+    return true;
+  }//_handleKeyDown
+
   getChildContext() {
     return {
       registerSelectable: this._registerSelectable,
@@ -80,37 +112,6 @@ export default class SelectableContainer extends Component {
       sortedSelectables[0].onFocus();
       this.setState({ activeSelectable: sortedSelectables[0] });
     }
-  }
-
-  // _handleKeyDown = (key: number) => {
-  _handleKeyDown = (key) => {
-    console.log("INFO SelectableContainer :: _handleKeyDown, key: " + key)
-    switch (key) {
-      case keyCodes.up:
-        console.log("INFO SelectableContainer :: _handleKeyDown, up")
-        this._selectNewActive(x => x - 1);
-        break;
-      case keyCodes.down:
-        console.log("INFO SelectableContainer :: _handleKeyDown, down")
-        this._selectNewActive(x => x + 1);
-        break;
-      case keyCodes.left:
-        console.log("INFO SelectableContainer :: _handleKeyDown, left")
-        break;
-      case keyCodes.right:
-        console.log("INFO SelectableContainer :: _handleKeyDown, right")
-        break;
-      case keyCodes.center:
-        console.log("INFO SelectableContainer :: _handleKeyDown, center")
-        if (this.state.activeSelectable) {
-          this.state.activeSelectable.onPress();
-        }
-        break;
-      default:
-        console.log("INFO SelectableContainer :: _handleKeyDown, default")
-    }
-
-    return true;
   }
 
   _registerSelectable = (

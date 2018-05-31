@@ -33,7 +33,7 @@ export default function selectable(WrappedComponent: any) {
 
     props: TProps
     context: TContext
-    _wrappedComponent: any
+    //_wrappedComponent: any
 
     _handleFocus = () => {
       const { onFocus } = this.props;
@@ -76,12 +76,14 @@ export default function selectable(WrappedComponent: any) {
     }
 
     render() {
+      //-- WhoIN :: WrappedComponent node updated
+      // <WrappedComponent ref={x => (this._wrappedComponent = x)} {...this.props} />
       return (
         <View
           onLayout={this._handleLayout}
           style={[this.props.style, this.state.isFocused ? styles.active : {}]}
         >
-          <WrappedComponent ref={x => (this._wrappedComponent = x)} {...this.props} />
+          <WrappedComponent {...this.props} />
         </View>
       );
     }
@@ -90,6 +92,6 @@ export default function selectable(WrappedComponent: any) {
 
 const styles = StyleSheet.create({
   active: {
-    opacity: 0.7,
+    opacity: 0.5,
   },
 });

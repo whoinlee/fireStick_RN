@@ -83,13 +83,13 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 25    //23
+    compileSdkVersion 23    //23
     buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "com.tv"
-        minSdkVersion 22    //16
-        targetSdkVersion 25 //22
+        minSdkVersion 16    //16
+        targetSdkVersion 22 //22, 25
         versionCode 1
         versionName "1.0"
         ndk {
@@ -128,7 +128,7 @@ android {
 dependencies {
     implementation project(':react-native-keyevent')
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.android.support:appcompat-v7:25.0.1"    //23.0.1
+    implementation "com.android.support:appcompat-v7:23.0.1"    //23.0.1
     implementation "com.facebook.react:react-native:+"          //From node_modules
 }
 
