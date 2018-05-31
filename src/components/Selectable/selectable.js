@@ -33,6 +33,7 @@ export default function selectable(WrappedComponent: any) {
 
     props: TProps
     context: TContext
+    //-- commented out by WhoIN, as ref for _wrappedComponent removed from <WrappedComponent> node
     //_wrappedComponent: any
 
     _handleFocus = () => {

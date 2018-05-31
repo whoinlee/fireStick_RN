@@ -59,6 +59,9 @@ export default class SelectableContainer extends Component {
   _handleKeyDown = (key) => {
     //console.log("INFO SelectableContainer :: _handleKeyDown, key.keyCode " + key.keyCode)
     //console.log("INFO SelectableContainer :: _handleKeyDown, typeof(key.keyCode) " + typeof(key.keyCode))
+    //-- WhoIN :: updated
+    //-- key is not a number, but an object
+    // switch (key) { 
     switch (key.keyCode) {
       case keyCodes.up:
         console.log("INFO SelectableContainer :: _handleKeyDown, up")
